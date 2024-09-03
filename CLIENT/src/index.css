@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+  font-size: 1rem;
+  font-family: "Sora", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  /* Charcoal color */
+  color: #34495e;
+
+  /* Bluish Black */
+  background-color: #080a1a;
+
+  /* Dry  */
+  /* background-color: #0B0F29; */
+
+  /* Charcoal *****/
+  /* background-color: #1B263B;  */
+
+  /* Dark Slate Gray */
+  /* background-color: #2F4F4F; */
+
+  /* Teal */
+  /* background-color: #008080; */
+
+  /* Midnight Green ******/
+  /* background-color: #004953; */
+
+  /* Deep Plum ******/
+  /* background-color: #2C003E; */
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Basic class  */
+
+.hoveres{
+    @apply hidden;
+}
+.hovereed:hover .hoveres{
+    @apply flex-colo;
+}
+.flex-colo{
+    @apply flex flex-col justify-center items-center;
+}
+.flex-rows{
+    @apply flex flex-row justify-center items-center;
+}
+.flex-btn{
+    @apply flex  justify-between items-center;
+}
+.transitions{
+    @apply transition  duration-300 ease-in-out;
+}
+.zIndex{
+    x-index: 1000;
+}
