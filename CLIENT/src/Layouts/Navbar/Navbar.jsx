@@ -71,7 +71,7 @@ export default function App() {
                     <NavbarBrand>
                         <Dropdown backdrop="blur" className="bg-NavBG">
                             <DropdownTrigger>
-                                <Button variant="outline" className="text-white uppercase">
+                                <Button variant="outline" className="text-white uppercase font-extrabold">
                                     Genre
                                 </Button>
                             </DropdownTrigger>
@@ -96,9 +96,9 @@ export default function App() {
 
                 {/* Main Navbar Items (Hidden on mobile) */}
                 <div className="hidden sm:flex gap-5">
-                    <NavLink className="uppercase text-white">Movies</NavLink>
-                    <NavLink className="uppercase text-white">About</NavLink>
-                    <NavLink className="uppercase text-white">Contact</NavLink>
+                    <NavLink className="uppercase text-white font-extrabold">Movies</NavLink>
+                    <NavLink className="uppercase text-white font-extrabold">About</NavLink>
+                    <NavLink className="uppercase text-white font-extrabold">Contact</NavLink>
                 </div>
 
                 {/* Profile Icon */}
