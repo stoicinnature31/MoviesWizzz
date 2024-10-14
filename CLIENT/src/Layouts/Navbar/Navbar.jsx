@@ -7,7 +7,7 @@ import { CgProfile } from "react-icons/cg";
 export default function App() {
     return (
         <Navbar className="bg-NavBG">
-            <div className="flex justify-between items-center w-full">
+            <div className="flex justify-around items-center w-full">
                 {/* Logo */}
                 <NavLink to="/" className="justify-start">
                     <img src={logo} alt="" width="260px" />
@@ -86,6 +86,8 @@ export default function App() {
                                 <DropdownItem key="new" className="text-blue-600"><NavLink to="/adventure">Action</NavLink></DropdownItem>
                                 <DropdownItem key="new" className="text-blue-600"><NavLink to="/adventure">Drama</NavLink></DropdownItem>
                                 <DropdownItem key="new" className="text-blue-600"><NavLink to="/adventure">Comedy</NavLink></DropdownItem>
+                                <DropdownItem key="new" className="text-blue-600"><NavLink to="/adventure">History</NavLink></DropdownItem>
+                                <DropdownItem key="new" className="text-blue-600"><NavLink to="/adventure">Crime</NavLink></DropdownItem>
                                 {/* Add more genres here */}
                             </DropdownMenu>
                         </Dropdown>
