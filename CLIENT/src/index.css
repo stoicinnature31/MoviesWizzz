@@ -42,7 +42,9 @@ select:focus {
 }
 
 /* Basic class  */
-
+/* .linear-bg{
+    background-image: linear-gradient(269.82deg, #07091c00 0.17%, #080a1ad6 99.87%);
+} */
 .hoveres{
     @apply hidden;
 }
@@ -59,8 +61,8 @@ select:focus {
     @apply flex  justify-between items-center;
 }
 .transitions{
-    @apply transition  duration-300 ease-in-out;
+    @apply transition  duration-500 ease-in-out;
 }
 .zIndex{
-    x-index: 1000;
+    z-index: 1000;
 }

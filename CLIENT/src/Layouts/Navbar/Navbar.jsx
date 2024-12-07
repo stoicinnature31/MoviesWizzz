@@ -1,122 +1,58 @@
-import React from "react";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Button, Dropdown, Link, DropdownTrigger, DropdownMenu, DropdownItem } from "@nextui-org/react";
-import logo from '/images/logo.png'
-import { NavLink } from "react-router-dom";
-import { CgProfile } from "react-icons/cg";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button } from "@nextui-org/react";
+import { FiSearch } from "react-icons/fi"; // Search icon
+import Logo from "/images/logo.png"; // Your logo
 
 export default function App() {
-    return (
-        <Navbar className="bg-NavBG">
-            <div className="flex justify-around items-center w-full">
-                {/* Logo */}
-                <NavLink to="/" className="justify-start">
-                    <img src={logo} alt="" width="260px" />
-                </NavLink>
+  return (
+    <Navbar shouldHideOnScroll className="w-full bg-NavBG text-white">
+      {/* Navbar container */}
+      <div className="w-full flex justify-between items-center px-4">
 
-                {/* Hamburger Menu for Mobile */}
-                <div className="block sm:hidden">
-                    <button id="hamburger" className="text-white focus:outline-none">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
-                        </svg>
-                    </button>
-                </div>
+        {/* Logo (Centered on small screens, left-aligned on larger screens) */}
+        <NavbarBrand className="flex items-center justify-center sm:justify-start w-full">
+          <img src={Logo} alt="Logo" className="h-12 w-auto" />
+        </NavbarBrand>
 
-                {/* Search Bar (Hidden on small screens) */}
-                <form className="hidden sm:block form relative">
-                    <button className="absolute left-2 -translate-y-1/2 top-1/2 p-1">
-                        <svg
-                            width="17"
-                            height="16"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            role="img"
-                            aria-labelledby="search"
-                            className="w-5 h-5 text-gray-700"
-                        >
-                            <path
-                                d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9"
-                                stroke="currentColor"
-                                strokeWidth="1.333"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            ></path>
-                        </svg>
-                    </button>
-                    <input
-                        className="input rounded-full px-10 py-2.5 border-2 border-transparent focus:outline-none focus:border-blue-500 placeholder-gray-400 transition-all duration-300 shadow-md bg-main max-w-full"
-                        placeholder="Search Movies..."
-                        required=""
-                        type="text"
-                    />
-                    <button type="reset" className="absolute right-3 -translate-y-1/2 top-1/2 p-1">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="w-5 h-5 text-gray-700"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M6 18L18 6M6 6l12 12"
-                            ></path>
-                        </svg>
-                    </button>
-                </form>
+        {/* Search Box (Visible on medium screens and up, hidden on small screens) */}
+        <form className="relative w-full max-w-[600px] sm:max-w-[800px] md:max-w-[900px] lg:max-w-[1000px] flex-1 mx-4 hidden md:flex justify-center">
+          <input
+            type="text"
+            className="w-full p-3 pl-12 rounded-full bg-gray-700 text-white placeholder-gray-400 focus:outline-none"
+            placeholder="Search Movies..."
+          />
+          {/* Search button hidden on small screens */}
+          <button
+            type="submit"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white bg-blue-600 hover:bg-blue-700 p-3 rounded-full hidden sm:block"
+          >
+            <FiSearch size={20} />
+          </button>
+        </form>
 
-                {/* Dropdown (Hidden on small screens) */}
-                <div className="hidden sm:block">
-                    <NavbarBrand>
-                        <Dropdown backdrop="blur" className="bg-NavBG">
-                            <DropdownTrigger>
-                                <Button variant="outline" className="text-white uppercase font-extrabold">
-                                    Genre
-                                </Button>
-                            </DropdownTrigger>
-                            <DropdownMenu variant="faded" aria-label="Static Actions">
-                                <DropdownItem key="new" className="text-blue-600"><NavLink to="/adventure">Adventure</NavLink></DropdownItem>
-                                <DropdownItem key="new" className="text-blue-600"><NavLink to="/adventure">Horror</NavLink></DropdownItem>
-                                <DropdownItem key="new" className="text-blue-600"><NavLink to="/adventure">Romance</NavLink></DropdownItem>
-                                <DropdownItem key="new" className="text-blue-600"><NavLink to="/adventure">Thriller</NavLink></DropdownItem>
-                                <DropdownItem key="new" className="text-blue-600"><NavLink to="/adventure">Suspense</NavLink></DropdownItem>
-                                <DropdownItem key="new" className="text-blue-600"><NavLink to="/adventure">Sci-Fi</NavLink></DropdownItem>
-                                <DropdownItem key="new" className="text-blue-600"><NavLink to="/adventure">Animation</NavLink></DropdownItem>
-                                <DropdownItem key="new" className="text-blue-600"><NavLink to="/adventure">Action</NavLink></DropdownItem>
-                                <DropdownItem key="new" className="text-blue-600"><NavLink to="/adventure">Drama</NavLink></DropdownItem>
-                                <DropdownItem key="new" className="text-blue-600"><NavLink to="/adventure">Comedy</NavLink></DropdownItem>
-                                <DropdownItem key="new" className="text-blue-600"><NavLink to="/adventure">History</NavLink></DropdownItem>
-                                <DropdownItem key="new" className="text-blue-600"><NavLink to="/adventure">Crime</NavLink></DropdownItem>
-                                {/* Add more genres here */}
-                            </DropdownMenu>
-                        </Dropdown>
-                    </NavbarBrand>
-                </div>
+        {/* Right-Aligned Content for larger screens */}
+        <NavbarContent justify="end" className="gap-4 hidden md:flex">
+          <NavbarItem className="hidden lg:flex">
+            <Button as={Link} color="primary" href="#" variant="flat" aria-label="Sign Up">
+              Sign Up
+            </Button>
+          </NavbarItem>
+          <NavbarItem>
+            <Button as={Link} color="primary" href="#" variant="flat" aria-label="Sign Up">
+              Sign Up
+            </Button>
+          </NavbarItem>
+        </NavbarContent>
+      </div>
 
-                {/* Main Navbar Items (Hidden on mobile) */}
-                <div className="hidden sm:flex gap-5">
-                    <NavLink className="uppercase text-white font-extrabold">Movies</NavLink>
-                    <NavLink className="uppercase text-white font-extrabold">About</NavLink>
-                    <NavLink className="uppercase text-white font-extrabold">Contact</NavLink>
-                </div>
+      {/* Search Box below the logo for small screens (Hidden on medium screens and up) */}
+      <div className="w-full flex justify-center md:hidden px-4 py-2">
+        {/* No search box for small screens */}
+      </div>
 
-                {/* Profile Icon */}
-                <NavbarContent justify="end">
-                    <NavLink>
-                        <CgProfile className="w-10 h-10 text-bluishWhite mx-4" />
-                    </NavLink>
-                </NavbarContent>
-            </div>
-
-            {/* Mobile Menu (toggle visibility using JS) */}
-            <div id="mobile-menu" className="hidden sm:hidden">
-                <NavLink className="block text-white py-2">Movies</NavLink>
-                <NavLink className="block text-white py-2">About</NavLink>
-                <NavLink className="block text-white py-2">Contact</NavLink>
-                <NavLink className="block text-white py-2">Genres</NavLink>
-                {/* Add search bar here for mobile if necessary */}
-            </div>
-        </Navbar>
-    );
+      {/* Central Navigation Menu (Visible only on medium screens and larger) */}
+      <NavbarContent className="hidden sm:flex gap-6" justify="center">
+        {/* Central menu items */}
+      </NavbarContent>
+    </Navbar>
+  );
 }
