@@ -13,24 +13,24 @@ const Banner = () => {
         const swiperInstance = swiperRef.current.swiper;
         swiperInstance.slideNext(); // Move to the next slide
       }
-    }, 5000); // Change slides every 5 seconds
+    }, 4000); // Change slides every 5 seconds
 
     return () => clearInterval(interval); // Cleanup on component unmount
   }, []);
 
   return (
     <div 
-      className="relative w-screen overflow-hidden mt-16" 
-      style={{ width: "100vw", margin: "0 auto" }} // Ensure full width and center
+      className="relative w-full overflow-hidden mt-16" 
+      style={{ margin: "0 auto" }} // Ensure centered
     >
       <Swiper
         ref={swiperRef} // Attach ref to Swiper
         direction="vertical" // Vertical slider
         slidesPerView={1} // Default to one slide per view
         spaceBetween={10} // Space between slides
-        speed={1000} // Smooth transition
+        speed={2000} // Smooth transition
         loop={true} // Infinite loop
-        className="w-fit h-[700px]" // Adjusted height for full poster visibility
+        className="w-full lg:w-screen h-[700px]" // Full width on large screens, default for others
       >
         {
         movies.map((movie, index) => (
