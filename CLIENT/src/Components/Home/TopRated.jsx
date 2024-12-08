@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import Title from '../Title';
 import { MdGeneratingTokens } from "react-icons/md";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -29,11 +29,22 @@ const TopRated = () => {
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)} // Store swiper instance
           spaceBetween={20}
-          slidesPerView={3} // Show 3 slides at a time
+          slidesPerView={3} // Default: Show 3 slides at a time
+          breakpoints={{
+            640: {
+              slidesPerView: 1, // Show 1 slide on mobile
+            },
+            768: {
+              slidesPerView: 2, // Show 2 slides on tablet
+            },
+            1024: {
+              slidesPerView: 3, // Show 3 slides on larger screens
+            },
+          }}
         >
           {movies.map((movie) => (
             <SwiperSlide key={movie.id}>
-              <div className="p-4 bg-gray-200 rounded-lg text-center">
+              <div className="p-0 text-center">
                 {/* Movie Poster */}
                 <img
                   src={movie.i.imageUrl}
@@ -76,3 +87,4 @@ const TopRated = () => {
 };
 
 export default TopRated;
+//I need  make the slider

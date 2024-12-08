@@ -2,6 +2,7 @@ import got from "/images/got poster.jpg"
 import inception from "/images/inception poster.jpg"
 import TheShawshankRedemption from "/images/SR.jpg"
 import fightClub from "/images/fightClub poster.jpg"
+import gifted from "/images/giftedLandscape.jpg"
 export const movies = [
     {
       i: {
@@ -66,7 +67,7 @@ export const movies = [
     {
       i: {
         height: 824,
-        imageUrl: inception,
+        imageUrl: gifted,
         width: 550,
       },
       id: "tt1375666",
@@ -75,7 +76,7 @@ export const movies = [
       qid: "movie",
       rank: 1,
       actors: "Leonardo DiCaprio, Joseph Gordon-Levitt",
-      year: 2010,
+      year: 2017,
       duration: "148 min",
     },
     {
