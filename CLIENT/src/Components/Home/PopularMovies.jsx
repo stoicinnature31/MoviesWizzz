@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Title from '../Title';
-import { BsCollectionFill } from 'react-icons/bs';
+import { BiSolidMoviePlay } from "react-icons/bi";
 import { movies } from '../../Data/MovieData';
 import Movie from '../Movie';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -21,9 +21,9 @@ const PopularMovies = () => {
   }, []);
 
   return (
-    <div className="my-16">
+    <div className="my-16 bg-dry px-10 py-10">
       {/* Title Section */}
-      <Title title="Popular Movies" Icon={BsCollectionFill} />
+      <Title title="Popular Movies" Icon={BiSolidMoviePlay} />
 
       {/* Movies Slider */}
       <div className="mt-6 sm:mt-12">
