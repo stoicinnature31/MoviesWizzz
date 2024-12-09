@@ -3,7 +3,7 @@ import aboutBg from '/images/aboutBg.jpg'
 
 const Head = ({ title }) => {
     return (
-        <div className='w-full bg-deepGray lg:h-64 relative overflow-hidden rounded-md'>
+        <div className='w-full bg-deepGray lg:h-64 h-40 relative overflow-hidden rounded-md'>
             <img src={aboutBg} alt="About Bg" className='w-full h-full object-cover' />
 
             <div className='absolute lg:top-24 top-16 w-full flex-colo'>

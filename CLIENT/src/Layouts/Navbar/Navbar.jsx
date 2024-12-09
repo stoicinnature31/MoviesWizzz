@@ -39,7 +39,7 @@ export default function App() {
           <NavLink to="/about" className=" hidden lg:flex text-sky-500 font-bold uppercase">
             About
           </NavLink>
-          <NavLink to="/contacts" className="hidden lg:flex text-sky-500 font-bold uppercase">
+          <NavLink to="/contact" className="hidden lg:flex text-sky-500 font-bold uppercase">
             Contacts
           </NavLink>
         </NavbarContent>
