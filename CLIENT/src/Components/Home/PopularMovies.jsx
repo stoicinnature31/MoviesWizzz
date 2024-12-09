@@ -15,7 +15,7 @@ const PopularMovies = () => {
         const swiperInstance = swiperRef.current.swiper;
         swiperInstance.slideNext(); // Move to the next slide
       }
-    }, 4000); // Change slides every 3 seconds
+    }, 4000); // Change slides every 4 seconds
 
     return () => clearInterval(interval); // Cleanup on component unmount
   }, []);
@@ -26,37 +26,24 @@ const PopularMovies = () => {
       <Title title="Popular Movies" Icon={BiSolidMoviePlay} />
 
       {/* Movies Slider */}
-      <div className="mt-6 sm:mt-12">
-        {/* For Mobile Screens */}
-        <div className="block sm:hidden">
-          <Swiper
-            ref={swiperRef} // Attach ref to Swiper
-            spaceBetween={10}
-            slidesPerView={2} // Display 2 slides at a time
-            breakpoints={{
-              480: { slidesPerView: 3 }, // Adjust for larger mobile screens
-            }}
-            loop={true} // Enable infinite loop
-            className="w-full"
-          >
-            {movies.slice(0, 8).map((movie, index) => (
-              <SwiperSlide key={index} className="w-auto">
-                <div className="">
-                  <Movie movie={movie} />
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-
-        {/* For Larger Screens */}
-        <div className="hidden sm:grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
-          {movies.slice(0, 8).map((movie, index) => (
-            <div key={index} className="">
+      <div className="mt-6">
+        <Swiper
+          ref={swiperRef} // Attach ref to Swiper
+          spaceBetween={20} // Space between slides
+          slidesPerView={2} // Default: Display 2 slides on smaller screens
+          loop={true} // Enable infinite loop
+          breakpoints={{
+            768: { slidesPerView: 3 }, // Tablets: 3 slides
+            1024: { slidesPerView: 4 }, // Laptops and larger: 4 slides
+          }}
+          className="w-full"
+        >
+          {movies.map((movie, index) => (
+            <SwiperSlide key={index} className="w-auto">
               <Movie movie={movie} />
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </div>
   );

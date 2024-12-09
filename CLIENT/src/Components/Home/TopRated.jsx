@@ -1,90 +1,52 @@
-import React, { useRef } from 'react';
-import Title from '../Title';
-import { MdGeneratingTokens } from "react-icons/md";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css'; // Swiper styles
-import { movies } from "./../../Data/MovieData.js"; // Import the movies data
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; // Use arrow icons
+import React, { useState } from "react";
+import Pagination from "./Pagination"; // Import the pagination component
+import { movies } from "../../Data/MovieData.js"; // Example movie data
 
-const TopRated = () => {
-  const swiperRef = useRef(null);
+const TopRatedMovies = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const moviesPerPage = 24; // Number of movies to display per page
 
-  const handleNext = () => {
-    if (swiperRef.current) {
-      swiperRef.current.swiper.slideNext(); // Move to the next slide
-    }
-  };
+  // Calculate the start and end indices for the current page
+  const startIndex = (currentPage - 1) * moviesPerPage;
+  const endIndex = startIndex + moviesPerPage;
+  const currentMovies = movies.slice(startIndex, endIndex); // Slice the movies for the current page
 
-  const handlePrev = () => {
-    if (swiperRef.current) {
-      swiperRef.current.swiper.slidePrev(); // Move to the previous slide
-    }
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
   };
 
   return (
-    <div className="bg-dry my-16">
-      <Title title="Top Rated" Icon={MdGeneratingTokens} />
-      <div className="mt-10 relative">
-        {/* Swiper Slider */}
-        <Swiper
-          onSwiper={(swiper) => (swiperRef.current = swiper)} // Store swiper instance
-          spaceBetween={20}
-          slidesPerView={3} // Default: Show 3 slides at a time
-          breakpoints={{
-            640: {
-              slidesPerView: 1, // Show 1 slide on mobile
-            },
-            768: {
-              slidesPerView: 2, // Show 2 slides on tablet
-            },
-            1024: {
-              slidesPerView: 3, // Show 3 slides on larger screens
-            },
-          }}
-        >
-          {movies.map((movie) => (
-            <SwiperSlide key={movie.id}>
-              <div className="p-0 text-center">
-                {/* Movie Poster */}
-                <img
-                  src={movie.i.imageUrl}
-                  alt={movie.name}
-                  className="w-full h-72 object-cover rounded-lg mb-4"
-                  style={{ maxHeight: `${movie.i.height}px`, maxWidth: `${movie.i.width}px` }}
-                />
-                {/* Movie Title */}
-                <h3 className="text-lg font-semibold">{movie.name}</h3>
-                {/* Additional Info */}
-                <p className="text-sm text-gray-600">
-                  {movie.category} • {movie.year}
-                </p>
-                <p className="text-xs text-gray-500">
-                  Actors: {movie.actors}
-                </p>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+    <div className="my-16 bg-dry px-10 py-10">
+      {/* Title Section */}
+      <h1 className="text-2xl font-bold text-white mb-6">Top Rated Movies</h1>
 
-        {/* Custom Navigation Buttons */}
-        <div className="absolute left-0 right-0 bottom-[-30px] z-10 flex justify-between px-4">
-          <button
-            className="bg-gray-800 text-white p-2 rounded-full"
-            onClick={handlePrev}
-          >
-            <FaArrowLeft size={24} />
-          </button>
-          <button
-            className="bg-gray-800 text-white p-2 rounded-full"
-            onClick={handleNext}
-          >
-            <FaArrowRight size={24} />
-          </button>
-        </div>
+      {/* Movies Grid */}
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
+        {currentMovies.map((movie, index) => (
+          <div key={index} className="bg-NavBG p-2 rounded-lg">
+            <img
+              src={movie.i.imageUrl}
+              alt={movie.name}
+              className="w-full h-60 object-cover rounded"
+            />
+            <h3 className="mt-2 text-lg font-bold text-white truncate">
+              {movie.name}
+            </h3>
+            <p className="text-sm text-gray-400">
+              {movie.year} • {movie.quality}
+            </p>
+          </div>
+        ))}
       </div>
+
+      {/* Pagination */}
+      <Pagination
+        currentPage={currentPage}
+        totalPages={Math.ceil(movies.length / moviesPerPage)} // Calculate total pages
+        onPageChange={handlePageChange}
+      />
     </div>
   );
 };
 
-export default TopRated;
-//I need  make the slider
+export default TopRatedMovies;

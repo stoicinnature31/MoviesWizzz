@@ -2,6 +2,7 @@ import { Navbar, NavbarContent, NavbarItem, Link, Button } from "@nextui-org/rea
 import { FiSearch } from "react-icons/fi"; // Search icon
 import Logo from "/images/logo.png"; // Your logo
 import { NavLink } from "react-router-dom";
+import { FaUser } from "react-icons/fa";
 
 export default function App() {
   return (
@@ -36,12 +37,16 @@ export default function App() {
 
         {/* Right-Aligned Content for larger screens */}
         <NavbarContent justify="end" className="gap-6 hidden sm:flex mx-2">
+        <NavLink to="/movies" className=" hidden lg:flex text-sky-500 font-bold uppercase">
+            Movies
+          </NavLink>
           <NavLink to="/about" className=" hidden lg:flex text-sky-500 font-bold uppercase">
             About
           </NavLink>
           <NavLink to="/contact" className="hidden lg:flex text-sky-500 font-bold uppercase">
             Contacts
           </NavLink>
+          <FaUser/>
         </NavbarContent>
       </div>
 
