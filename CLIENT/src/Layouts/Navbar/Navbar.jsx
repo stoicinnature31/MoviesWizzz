@@ -1,8 +1,9 @@
-import { Navbar, NavbarContent, NavbarItem, Link, Button } from "@nextui-org/react";
+import { Navbar, NavbarContent, NavbarItem, Button } from "@nextui-org/react";
 import { FiSearch } from "react-icons/fi"; // Search icon
 import Logo from "/images/logo.png"; // Your logo
 import { NavLink } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
+import {Link} from "react-router-dom"
 
 export default function App() {
   return (
@@ -11,13 +12,13 @@ export default function App() {
       <div className="lg:w-full flex flex-col sm:flex-row items-center px-4 py-4 sm:py-0">
 
         {/* Logo (Aligned to the extreme left on all screen sizes) */}
-        <div className="flex items-center justify-start w-auto sm:mr-auto">
+        <Link to={`/`} className="flex items-center justify-start w-auto sm:mr-auto">
           <img
             src={Logo}
             alt="Logo"
             className="h-16 w-auto sm:h-20" // Enlarged logo
           />
-        </div>
+        </Link>
 
         {/* Search Box (Stacked below the logo on mobile, horizontally aligned on larger screens) */}
         <form className="relative w-full sm:w-[60%] md:w-[70%] flex justify-center mb-4 sm:mb-0">

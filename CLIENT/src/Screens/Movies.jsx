@@ -1,11 +1,12 @@
 import React from 'react'
 import Layout from '../Layouts/Layout'
+import TopRatedMovies from '../Components/Home/TopRated'
 
 const Movies = () => {
   return (
     <>
     <Layout>
-        Movies
+       <TopRatedMovies/>
     </Layout>
     </>
   )

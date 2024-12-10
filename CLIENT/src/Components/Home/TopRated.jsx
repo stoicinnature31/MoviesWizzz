@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Pagination from "./Pagination"; // Import the pagination component
 import { movies } from "../../Data/MovieData.js"; // Example movie data
+import { Link } from "react-router-dom";
 
 const TopRatedMovies = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -21,9 +22,9 @@ const TopRatedMovies = () => {
       <h1 className="text-2xl font-bold text-white mb-6">Top Rated Movies</h1>
 
       {/* Movies Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
         {currentMovies.map((movie, index) => (
-          <div key={index} className="bg-NavBG p-2 rounded-lg">
+          <Link to={`/movies/${movie?.name}`} key={index} className="bg-NavBG p-2">
             <img
               src={movie.i.imageUrl}
               alt={movie.name}
@@ -35,7 +36,7 @@ const TopRatedMovies = () => {
             <p className="text-sm text-gray-400">
               {movie.year} • {movie.quality}
             </p>
-          </div>
+          </Link>
         ))}
       </div>
 
