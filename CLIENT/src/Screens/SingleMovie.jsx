@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import Movies from './Movies'
 import { movies } from '../Data/MovieData'
 import MovieInfo from '../Components/Single/MovieInfo'
+import Moviecast from '../Components/Single/Moviecast'
 
 const SingleMovie = () => {
 
@@ -14,7 +15,10 @@ const SingleMovie = () => {
   return (
     <>
     <Layout>
-        <MovieInfo movie ={movie}/>        
+        <MovieInfo movie ={movie}/>   
+        <div className='container mx-auto min-h-screen px-2 my-6'>
+          <Moviecast/>
+        </div>
     </Layout>
     </>
   )

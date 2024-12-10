@@ -37,7 +37,7 @@ export default function App() {
         </form>
 
         {/* Right-Aligned Content for larger screens */}
-        <NavbarContent justify="end" className="gap-6 hidden sm:flex mx-2">
+        <div justify="end" className="gap-6 hidden sm:flex mx-2">
         <NavLink to="/movies" className=" hidden lg:flex text-sky-500 font-bold uppercase">
             Movies
           </NavLink>
@@ -47,8 +47,8 @@ export default function App() {
           <NavLink to="/contact" className="hidden lg:flex text-sky-500 font-bold uppercase">
             Contacts
           </NavLink>
-          <FaUser/>
-        </NavbarContent>
+          <FaUser className="w-6 h-6 flex justify-end"/>
+        </div>
       </div>
 
       {/* Central Navigation Menu (Visible only on medium screens and larger) */}
