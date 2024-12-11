@@ -3,6 +3,7 @@ import inception from "/images/inception poster.jpg"
 import TheShawshankRedemption from "/images/SR.jpg"
 import fightClub from "/images/fightClub poster.jpg"
 import gifted from "/images/giftedLandscape.jpg"
+import substance from "/images/substance.jpg"
 export const movies = [
     {
       i: {
@@ -41,7 +42,7 @@ export const movies = [
         width: 550,
       },
       id: "3",
-      name: "Inception",
+      name: "Fight Club",
       category: "Movie",
       qid: "movie",
       rank: 1,
@@ -52,16 +53,16 @@ export const movies = [
     {
       i: {
         height: 824,
-        imageUrl: inception,
+        imageUrl: substance,
         width: 550,
       },
       id: "4",
-      name: "Inception",
+      name: "The Substance",
       category: "Movie",
       qid: "movie",
       rank: 1,
-      actors: "Leonardo DiCaprio, Joseph Gordon-Levitt",
-      year: 2010,
+      actors: "	Demi Moore, Margaret Qualley",
+      year: 2024,
       duration: "148 min",
     },
     {
@@ -71,7 +72,7 @@ export const movies = [
         width: 550,
       },
       id: "5",
-      name: "Inception",
+      name: "Gifted",
       category: "Movie",
       qid: "movie",
       rank: 1,

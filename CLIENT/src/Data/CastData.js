@@ -1,5 +1,7 @@
 import decaprio from '/images/decaprio.jpg'
 import tomHardy from '/images/tomHardy.jpg'
+import johnsnow from '/images/johnsnow.webp'
+import emillia from '/images/emillia.jpg'
 export const casts = [
     {
       name: "Inception",
@@ -9,8 +11,8 @@ export const casts = [
           photo: decaprio
         },
         {
-          name: "Joseph Gordon-Levitt",
-          photo: "https://example.com/photos/joseph-gordon-levitt.jpg"
+          name: "johnsnow",
+          photo: johnsnow
         },
         {
           name: "Tom Hardy",
@@ -32,8 +34,8 @@ export const casts = [
       name: "Wonder Woman",
       actors: [
         {
-          name: "Chris Pine",
-          photo: "https://example.com/photos/chris-pine.jpg"
+          name: "Emmillia Clarke",
+          photo: emillia
         },
         {
           name: "Robin Wright",

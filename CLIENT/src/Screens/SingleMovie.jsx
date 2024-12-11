@@ -16,9 +16,8 @@ const SingleMovie = () => {
     <>
     <Layout>
         <MovieInfo movie ={movie}/>   
-        <div className='container mx-auto min-h-screen px-2 my-6'>
-          <Moviecast/>
-        </div>
+        <Moviecast/>      
+        {/* Reviews to be done */}
     </Layout>
     </>
   )
