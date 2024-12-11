@@ -61,9 +61,10 @@ const WatchPage = () => {
         </div>
 
         {/* Watch Video */}
-        <div className="w-full h-full">
+        <div className="w-full h-full flex justify-center items-center bg-gray-900 p-4 rounded-lg shadow-lg">
           {trailerId ? (
             <iframe
+              className="rounded-lg"
               width="100%"
               height="500px"
               src={`https://www.youtube.com/embed/${trailerId}`}
@@ -74,11 +75,13 @@ const WatchPage = () => {
               allowFullScreen
             ></iframe>
           ) : (
-            <p className="text-center text-gray-400">
+            <p className="text-center text-gray-400 text-lg italic">
               Trailer not available for this movie.
             </p>
           )}
         </div>
+
+
       </div>
     </Layout>
   );
