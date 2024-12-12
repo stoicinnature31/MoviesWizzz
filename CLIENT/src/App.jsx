@@ -8,6 +8,8 @@ import NotFound from './Screens/NotFound.jsx'
 import Movies from './Screens/Movies.jsx'
 import SingleMovie from './Screens/SingleMovie.jsx'
 import WatchPage from './Screens/WatchPage.jsx'
+import Login from './Screens/Authentication/Login.jsx'
+import Register from './Screens/Authentication/Register.jsx'
 
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={<HomeScreen />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
         <Route path='/movies' element={<Movies />} />
         <Route path='/movies/:id' element={<SingleMovie />} />
         <Route path='/watch/:id' element={<WatchPage />} />

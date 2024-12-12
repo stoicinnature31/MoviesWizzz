@@ -34,7 +34,7 @@ export default function App() {
             {/* Search button */}
             <button
               type="submit"
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white bg-blue-600 hover:bg-blue-700 p-3 rounded-full"
+              className="absolute right-1.5 text-white bg-blue-600 hover:bg-blue-700 p-3 rounded-full"
             >
               <FiSearch size={20} />
             </button>
@@ -54,27 +54,36 @@ export default function App() {
 
       {/* Mobile Menu (Only shown when menuOpen is true) */}
       {menuOpen && (
-        <div className="sm:flex lg:hidden bg-gray-800 text-white p-4 flex flex-col gap-4">
+        <div className="sm:flex lg:hidden bg-gray-800 text-white p-4 flex flex-col m-auto">
           <NavLink
             to="/movies"
             className="text-sky-500 font-bold uppercase"
-            onClick={() => setMenuOpen(false)}
-          >
+            onClick={() => setMenuOpen(false)}>
             Movies
           </NavLink>
           <NavLink
             to="/about"
             className="text-sky-500 font-bold uppercase"
-            onClick={() => setMenuOpen(false)}
-          >
+            onClick={() => setMenuOpen(false)}>
             About
           </NavLink>
           <NavLink
             to="/contact"
             className="text-sky-500 font-bold uppercase"
-            onClick={() => setMenuOpen(false)}
-          >
+            onClick={() => setMenuOpen(false)}>
             Contacts
+          </NavLink>
+          <NavLink
+            to="/login"
+            className="text-sky-500 font-bold uppercase"
+            onClick={() => setMenuOpen(false)}>
+            Login
+          </NavLink>
+          <NavLink
+            to="/register"
+            className="text-sky-500 font-bold uppercase"
+            onClick={() => setMenuOpen(false)}>
+            Register
           </NavLink>
         </div>
       )}
@@ -87,9 +96,14 @@ export default function App() {
         <NavLink to="/about" className={({ isActive }) => `font-bold uppercase ${isActive ? "text-blue-500" : "text-white"}`}>
           About
         </NavLink>
-        <NavLink to="/contact" className={({ isActive }) => `font-bold uppercase ${isActive ? "text-blue-500" : "text-white"}`
-        }>
+        <NavLink to="/contact" className={({ isActive }) => `font-bold uppercase ${isActive ? "text-blue-500" : "text-white"}`}>
           Contacts
+        </NavLink>
+        <NavLink to="/login" className={({ isActive }) => `font-bold uppercase ${isActive ? "text-blue-500" : "text-white"}`}>
+          Login
+        </NavLink>
+        <NavLink to="/register" className={({ isActive }) => `font-bold uppercase ${isActive ? "text-blue-500" : "text-white"}`}>
+          Register
         </NavLink>
       </NavbarContent>
     </Navbar>

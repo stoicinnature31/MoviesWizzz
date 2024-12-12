@@ -4,6 +4,7 @@ import TheShawshankRedemption from "/images/SR.jpg"
 import fightClub from "/images/fightClub poster.jpg"
 import gifted from "/images/giftedLandscape.jpg"
 import substance from "/images/substance.jpg"
+import immitation from "/images/immitation.webp"
 export const movies = [
     {
       i: {
@@ -128,11 +129,11 @@ export const movies = [
     {
       i: {
         height: 824,
-        imageUrl: TheShawshankRedemption,
+        imageUrl: immitation,
         width: 550,
       },
       id: "9",
-      name: "The Shawshank Redemption",
+      name: "The Immitation Game",
       category: "Movie",
       qid: "movie",
       rank: 1,
