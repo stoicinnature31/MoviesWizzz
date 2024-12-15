@@ -19,11 +19,10 @@ function App() {
   const Login = lazy(() => import('./Screens/Authentication/Login.jsx'));
   const Register = lazy(() => import('./Screens/Authentication/Register.jsx'));
   const Profile = lazy(() => import('./Screens/Dashboard/Profile.jsx'));
-  // const Loader = lazy(() => import('./Loader/Loader.jsx'));
+  // const Loader = lazy(() => import('./Loader/Loader.jsx')); receiving error
 
   return (
     <BrowserRouter>
-      {/* <Suspense fallback={<h1>Loader...</h1>}> */}
       <Suspense fallback={<Loader/>}>
         <Routes>
           <Route path="/" element={<HomeScreen />} />
