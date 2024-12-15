@@ -3,7 +3,7 @@ import { Navbar, NavbarContent } from "@nextui-org/react";
 import { FiSearch } from "react-icons/fi"; // Search icon
 import Logo from "/images/logo.png"; // Your logo
 import { NavLink } from "react-router-dom";
-import { FaUser } from "react-icons/fa";
+import { FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi"; // Hamburger and close icons
 
@@ -80,10 +80,9 @@ export default function App() {
             Login
           </NavLink>
           <NavLink
-            to="/register"
-            className="text-sky-500 font-bold uppercase"
+            to="/profile"
             onClick={() => setMenuOpen(false)}>
-            Register
+            <FaUserAlt className="w-5 h-5"/>
           </NavLink>
         </div>
       )}
@@ -102,8 +101,8 @@ export default function App() {
         <NavLink to="/login" className={({ isActive }) => `font-bold uppercase ${isActive ? "text-blue-500" : "text-white"}`}>
           Login
         </NavLink>
-        <NavLink to="/register" className={({ isActive }) => `font-bold uppercase ${isActive ? "text-blue-500" : "text-white"}`}>
-          Register
+        <NavLink to="/profile" >
+        <FaUserAlt className="w-5 h-5"/>
         </NavLink>
       </NavbarContent>
     </Navbar>
