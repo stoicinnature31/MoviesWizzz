@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="max-w-screen-xl mx-auto text-center">
         {/* Logo */}
         <Link to={`/`} className="text-2xl font-bold text-white mb-4">
-          <img src={logo} alt="" />
+          <img src={logo} alt="" className="mx-auto"/>
         </Link>
 
         {/* Copyright Text */}
