@@ -19,7 +19,7 @@ const Banner = () => {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden mt-16" style={{ margin: "0 auto" }}>
+    <div className="relative max-w-screen-xl overflow-hidden mt-16" style={{ margin: "0 auto" }}>
       <Swiper
         ref={swiperRef} // Attach ref to Swiper
         slidesPerView={1} // Default to one slide per view

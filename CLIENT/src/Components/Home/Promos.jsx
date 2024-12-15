@@ -6,7 +6,7 @@ import mobile from '/images/mobile.webp'
 const Promos = () => {
   return (
     <>
-    <div className='my-20 py-10 md:px-20 px-8 bg-dry'>
+    <div className='max-w-screen-xl mx-auto my-20 py-10 md:px-20 px-8 bg-dry'>
       <div className='lg:grid lg:grid-cols-2 lg:gap-10 items-center'>
         <div className='flex flex-col lg:gap-10 gap-6'>
           {/* <MdVideocam className='sm:w-6 sm:h-6 w-7 h-7 m-2 text-sky-500'/> */}

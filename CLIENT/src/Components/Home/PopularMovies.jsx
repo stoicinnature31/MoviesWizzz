@@ -21,7 +21,7 @@ const PopularMovies = () => {
   }, []);
 
   return (
-    <div className="my-16 bg-dry px-10 py-10">
+    <div className="max-w-screen-xl my-16 bg-dry px-10 py-10 mx-auto">
       {/* Title Section */}
       <Title title="Popular Movies" Icon={BiSolidMoviePlay} />
 

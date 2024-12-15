@@ -12,8 +12,8 @@ const Sidebar = ({ children }) => {
     { id: 2, name: 'Dashboard', link: '/dashboard', icon: MdDashboard },
     { id: 3, name: 'Movies', link: '/movies', icon: BiSolidMoviePlay },
     { id: 4, name: 'Profile', link: '/profile', icon: FaUserAlt },
-    { id: 5, name: 'Categories', link: '/categories', icon: FaUserAlt },
-    { id: 6, name: 'Update Profile', link: '/update', icon: FaUserAlt },
+    { id: 5, name: 'Favourite', link: '/categories', icon: FaUserAlt },
+    { id: 6, name: 'Change Password', link: '/password', icon: FaUserAlt },
   ];
 
   const active = "text-sky-500 bg-black flex-row"

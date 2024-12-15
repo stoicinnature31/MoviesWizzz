@@ -17,35 +17,45 @@ const TopRatedMovies = () => {
   };
 
   return (
-    <div className="my-16 bg-dry px-10 py-10">
-      {/* Title Section */}
-      <h1 className="text-2xl font-bold text-white mb-6">Top Rated Movies</h1>
+    <div className="my-16 bg-black px-10 py-10">
+      <div className="max-w-screen-xl mx-auto">
+        {/* Title Section */}
+        <h1 className="text-3xl font-bold text-white mb-6">Top Rated Movies</h1>
 
-      {/* Movies Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
-        {currentMovies.map((movie, index) => (
-          <Link to={`/movies/${movie?.name}`} key={index} className="bg-NavBG p-2">
-            <img
-              src={movie.i.imageUrl}
-              alt={movie.name}
-              className="w-full h-60 object-cover rounded"
-            />
-            <h3 className="mt-2 text-lg font-bold text-white truncate">
-              {movie.name}
-            </h3>
-            <p className="text-sm text-gray-400">
-              {movie.year} • {movie.quality}
-            </p>
-          </Link>
-        ))}
+        {/* Movies Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          {currentMovies.map((movie, index) => (
+            <div key={index} className="bg-dry rounded overflow-hidden shadow-lg">
+              <Link to={`/movies/${movie?.name}`}>
+                <img
+                  src={movie.i.imageUrl}
+                  alt={movie.name}
+                  className="w-full h-72 object-cover"
+                />
+              </Link>
+              <div className="p-4 text-center">
+                <h3 className="text-lg font-bold text-white truncate">
+                  {movie.name}
+                </h3>
+                <p className="text-sm text-gray-400">
+                  {movie.year} • {movie.quality}
+                </p>
+                <p className="text-xs text-green-400 font-semibold mt-2">
+                  ⭐ {movie.rating || "7/10"}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Pagination */}
+        <Pagination
+          currentPage={currentPage}
+          totalPages={Math.ceil(movies.length / moviesPerPage)} // Calculate total pages
+          onPageChange={handlePageChange}
+        />
+
       </div>
-
-      {/* Pagination */}
-      <Pagination
-        currentPage={currentPage}
-        totalPages={Math.ceil(movies.length / moviesPerPage)} // Calculate total pages
-        onPageChange={handlePageChange}
-      />
     </div>
   );
 };

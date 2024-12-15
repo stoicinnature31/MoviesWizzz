@@ -2,7 +2,7 @@ import got from "/images/got poster.jpg"
 import inception from "/images/inception poster.jpg"
 import TheShawshankRedemption from "/images/SR.jpg"
 import fightClub from "/images/fightClub poster.jpg"
-import gifted from "/images/giftedLandscape.jpg"
+import gifted from "/images/giftedPortrait.jpg"
 import substance from "/images/substance.jpg"
 import immitation from "/images/immitation.webp"
 export const movies = [
