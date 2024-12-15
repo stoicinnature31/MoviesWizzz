@@ -11,11 +11,11 @@ import WatchPage from './Screens/WatchPage.jsx'
 import Login from './Screens/Authentication/Login.jsx'
 import Register from './Screens/Authentication/Register.jsx'
 import Profile from './Screens/Dashboard/Profile.jsx'
-
-
+import Aos from 'aos'
 function App() {
-
+  Aos.init()
   return (
+    
     <>
       <Routes>
         <Route path='/' element={<HomeScreen />} />
