@@ -1,39 +1,45 @@
-import './App.css'
-import './index.css'
-import { Route, Routes } from 'react-router-dom'
-import HomeScreen from './Screens/HomeScreen.jsx'
-import AboutUs from './Screens/AboutUs.jsx'
-import ContactUs from './Screens/ContactUs.jsx'
-import NotFound from './Screens/Notfound/NotFound.jsx'
-import Movies from './Screens/Movies.jsx'
-import SingleMovie from './Screens/SingleMovie.jsx'
-import WatchPage from './Screens/WatchPage.jsx'
-import Login from './Screens/Authentication/Login.jsx'
-import Register from './Screens/Authentication/Register.jsx'
-import Profile from './Screens/Dashboard/Profile.jsx'
-import Aos from 'aos'
+import './App.css';
+import './index.css';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import React, { Suspense, lazy } from 'react';
+import Aos from 'aos';
+import Loader from './Loader/Loader.jsx'
+
 function App() {
-  Aos.init()
+  Aos.init();
+
+  // Lazy load components
+  const HomeScreen = lazy(() => import('./Screens/HomeScreen.jsx'));
+  const AboutUs = lazy(() => import('./Screens/AboutUs.jsx'));
+  const ContactUs = lazy(() => import('./Screens/ContactUs.jsx'));
+  const NotFound = lazy(() => import('./Screens/Notfound/NotFound.jsx'));
+  const Movies = lazy(() => import('./Screens/Movies.jsx'));
+  const SingleMovie = lazy(() => import('./Screens/SingleMovie.jsx'));
+  const WatchPage = lazy(() => import('./Screens/WatchPage.jsx'));
+  const Login = lazy(() => import('./Screens/Authentication/Login.jsx'));
+  const Register = lazy(() => import('./Screens/Authentication/Register.jsx'));
+  const Profile = lazy(() => import('./Screens/Dashboard/Profile.jsx'));
+  // const Loader = lazy(() => import('./Loader/Loader.jsx'));
+
   return (
-    
-    <>
-      <Routes>
-        <Route path='/' element={<HomeScreen />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/movies' element={<Movies />} />
-        <Route path='/movies/:id' element={<SingleMovie />} />
-        <Route path='/watch/:id' element={<WatchPage />} />
-        <Route path='/about' element={<AboutUs />} />
-        <Route path='/contact' element={<ContactUs />} />
-        <Route path='/profile' element={<Profile />} />
-
-
-        <Route path='*' element={<NotFound />} />
-      </Routes>
-
-    </>
-  )
+    <BrowserRouter>
+      {/* <Suspense fallback={<h1>Loader...</h1>}> */}
+      <Suspense fallback={<Loader/>}>
+        <Routes>
+          <Route path="/" element={<HomeScreen />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/:id" element={<SingleMovie />} />
+          <Route path="/watch/:id" element={<WatchPage />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

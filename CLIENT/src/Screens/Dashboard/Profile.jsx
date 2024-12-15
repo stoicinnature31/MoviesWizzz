@@ -15,8 +15,8 @@ const Profile = () => {
       <input type="email" className='w-full bg-main my-5 border-2 border-border p-5 text-white text-lg' placeholder='example@gmail.com' />
 
       <div className='flex gap-2 flex-wrap flex-col-reverse sm:flex-row justify-between items-center my-4'>
-        <button className='bg-sky-500 font-medium transitions hover:bg-transparent border border-sky-500 text-white py-4 px-4 rounded w-full sm:w-auto'>Delete Account</button>
-        <button className='bg-sky-500 font-medium transitions hover:bg-transparent border border-sky-500 text-white py-4 px-4 rounded w-full sm:w-auto'>Update Profile</button>
+        <button className='bg-sky-500 font-medium transitions hover:bg-transparent border border-sky-500 text-white py-3 px-4 rounded w-full sm:w-auto text-lg'>Delete Account</button>
+        <button className='bg-sky-500 font-medium transitions hover:bg-transparent border border-sky-500 text-white py-3 px-4 rounded w-full sm:w-auto text-lg'>Update Profile</button>
       </div>
     </Sidebar>
   )
