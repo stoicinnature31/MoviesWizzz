@@ -65,12 +65,11 @@ const MovieCategoryMenu = () => {
           <div
             key={index}
             style={{
-              backgroundColor: "#444",
               padding: "10px 15px",
               borderRadius: "5px",
               fontSize: "14px",
             }}
-            className="text-sky-500 font-semibold"
+            className="text-sky-500 font-semibold bg-black border-2 border-sky-500"
           >
             {subCategory}
           </div>
