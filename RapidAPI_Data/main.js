@@ -12,7 +12,7 @@ async function fetchMovieData() {
     try {
         const response = await fetch(url, options);
         const result = await response.json(); // Use `.json()` if expecting JSON response
-        // console.log(result);
+        console.log(result);
 		const list = result.d;
 		list.map((item) => {
 			console.log(item);

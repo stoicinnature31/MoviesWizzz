@@ -23,7 +23,7 @@ const Moviecast = () => {
 
   return (
     <>
-      <div className="my-12">
+      <div className="my-12 max-w-screen-xl mx-auto">
         <Title title="Casts" Icon={FaUserFriends} />
         {/* Single Horizontal Slider */}
         <div className="mt-6">

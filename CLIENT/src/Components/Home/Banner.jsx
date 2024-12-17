@@ -18,6 +18,11 @@ const Banner = () => {
     return () => clearInterval(interval); // Cleanup on component unmount
   }, []);
 
+
+
+
+  
+
   return (
     <div className="relative max-w-screen-xl overflow-hidden mt-16" style={{ margin: "0 auto" }}>
       <Swiper

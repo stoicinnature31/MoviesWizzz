@@ -1,7 +1,6 @@
 import React from 'react'
-import Layout from '../Layouts/Layout'
-import TopRatedMovies from '../Components/Home/TopRated'
-import MovieCategoryMenu from '../Components/Home/MovieCategoryMenu'
+import TopRatedMovies from '../Components/Home/TopRated.jsx'
+import Layout from '../Layouts/Layout.jsx'
 
 const Movies = () => {
   return (

@@ -14,7 +14,7 @@ const Footer = () => {
         {/* Copyright Text */}
         <p className="text-sm mb-4">
           Copyright © {new Date().getFullYear()}. Created by{" "}
-          <span className="text-sky-500 font-bold">❤️ MoviesWizZz Team ❤️</span>
+          <span className="text-sky-500 font-bold">MoviesWizZz Team🍿</span>
         </p>
 
         {/* Links */}
