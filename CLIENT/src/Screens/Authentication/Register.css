@@ -2,14 +2,15 @@
 .form {
     display: flex;
     flex-direction: column;
+    height: 100%;
     gap: 10px;
     max-width: 350px;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 0px;
     position: relative;
-    background-color: #1a1a1a;
+    background-color: #0B0F29;
     color: #fff;
-    border: 1px solid #333;
+    border: 1px solid #0B0F29;
   }
   
   .title {
@@ -74,13 +75,13 @@
   }
   
   .form label .input {
-    background-color: #333;
+    background-color: black;
     color: #fff;
     width: 100%;
     padding: 20px 05px 05px 10px;
     outline: 0;
-    border: 1px solid rgba(105, 105, 105, 0.397);
-    border-radius: 10px;
+    border: 1px solid black;
+    border-radius: 0px;
   }
   
   .form label .input + span {
@@ -114,8 +115,9 @@
     border: none;
     outline: none;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 0px;
     color: #fff;
+    font-weight: bold;
     font-size: 16px;
     transform: .3s ease;
     background-color: #00bfff;
