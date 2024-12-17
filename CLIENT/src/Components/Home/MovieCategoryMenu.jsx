@@ -43,7 +43,7 @@ const MovieCategoryMenu = () => {
             style={{
               backgroundColor: category.color,
               border: "none",
-              borderRadius: "5px",
+              borderRadius: "0px",
               padding: "10px 20px",
               cursor: "pointer",
             }}
@@ -66,7 +66,7 @@ const MovieCategoryMenu = () => {
             key={index}
             style={{
               padding: "10px 15px",
-              borderRadius: "5px",
+              borderRadius: "0px",
               fontSize: "14px",
             }}
             className="text-sky-500 font-semibold bg-black border-2 border-sky-500"
