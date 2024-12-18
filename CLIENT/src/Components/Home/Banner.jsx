@@ -13,7 +13,7 @@ const Banner = () => {
         const swiperInstance = swiperRef.current.swiper;
         swiperInstance.slideNext(); // Move to the next slide
       }
-    }, 4000); // Change slides every 4 seconds
+    }, 3000); // Change slides every 4 seconds
 
     return () => clearInterval(interval); // Cleanup on component unmount
   }, []);

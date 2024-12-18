@@ -1,6 +1,7 @@
 import React from "react";
 
 const MovieCategoryMenu = () => {
+  
   const mainCategories = [
     { name: "Bollywood Movies", color: "green" },
     { name: "Dual Audio Content", color: "red" },

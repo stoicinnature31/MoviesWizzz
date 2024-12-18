@@ -6,12 +6,13 @@ const TopRatedMovies = () => {
   const [movies, setMovies] = useState([]); // State to hold fetched movies
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1); // Total number of pages from OMDb API
-  const moviesPerPage = 24; // Number of movies to display per page
+  const moviesPerPage = 12; // Number of movies to display per page
 
   // Fetch movies from the OMDb API (fetching multiple pages)
   const fetchMovies = async () => {
     const movie = [];
     const totalResults = 100; // Limit to a total of 100 results, adjust as needed
+    const keywords = ["horror","game", "suspense", "movie", "comedy", "thriller"]; // Modify search terms to expand results
 
     // Loop through multiple pages of results
     for (let page = 1; page <= Math.ceil(totalResults / 10); page++) {
@@ -20,6 +21,8 @@ const TopRatedMovies = () => {
       try {
         const response = await fetch(url);
         const data = await response.json();
+        console.log(data);
+        
         if (data && data.Search) {
           movie.push(...data.Search);
         }
@@ -27,7 +30,7 @@ const TopRatedMovies = () => {
         console.error("Error fetching movies:", error);
       }
     }
-
+    console.log(movie)
     setMovies(movie); // Set all the fetched movies
     setTotalPages(Math.ceil(movie.length / moviesPerPage)); // Set total pages for pagination
   };
@@ -68,10 +71,10 @@ const TopRatedMovies = () => {
                   {movie.Title}
                 </h3>
                 <p className="text-sm text-gray-400">
-                  {movie.Year} • {movie.Runtime}
+                  {movie?.Year} • {movie?.Runtime}
                 </p>
-                <p className="text-xs text-green-400 font-semibold mt-2">
-                  ⭐ {movie.imdbRating}
+                <p className="text-xs text-blue-700 font-semibold mt-2">
+                  ⭐ {movie?.Type}
                 </p>
               </div>
             </div>
