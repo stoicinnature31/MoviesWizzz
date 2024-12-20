@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import Sidebar from './Sidebar'
 import Uploader from '../../Components/Uploader.jsx'
 
@@ -22,4 +22,4 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default memo(Profile)

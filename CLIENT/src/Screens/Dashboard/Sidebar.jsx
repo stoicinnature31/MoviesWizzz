@@ -26,7 +26,7 @@ const Sidebar = ({ children }) => {
     <Layout>
       <div className='min-h-screen container mx-auto px-2'>
         <div className='xl:grid grid-cols-8 gap-10 items-start md:py-12 py-6'>
-          <div className='col-span-2 sticky bg-dry border border-sky-500 p-6 rounded-md xl:mb-0 mb-5'>
+          <div className='col-span-2 sticky bg-dry border border-sky-500 p-6 xl:mb-0 mb-5'>
             {
               sideLinks.map((i) => (
                 <NavLink key={i.id} to={i.link} className={Hover}>
@@ -41,7 +41,7 @@ const Sidebar = ({ children }) => {
             data-aos-duration="1000"
             data-aos-delay="10"
             data-aos-offset="200"
-            className='col-span-6 rounded-md bg-dry border border-gray-50 p-6'>
+            className='col-span-6 bg-dry border border-sky-500 p-6'>
             {children}
           </div>
         </div>
