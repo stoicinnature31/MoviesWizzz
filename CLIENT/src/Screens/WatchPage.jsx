@@ -5,7 +5,7 @@ import { MdArrowBackIos } from "react-icons/md";
 import { FaHeart, FaDownload } from "react-icons/fa";
 
 const OMDB_API_KEY = "81a74c01"; // Replace with your OMDB API key
-const OMDB_API_URL = "http://www.omdbapi.com/";
+const OMDB_API_URL = "https://www.omdbapi.com/";
 
 const WatchPage = () => {
   const { id } = useParams();
