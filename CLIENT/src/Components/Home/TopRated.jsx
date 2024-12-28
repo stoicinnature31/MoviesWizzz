@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo } from "react";
+import React, { useState, useEffect, memo, useCallback } from "react";
 import Pagination from "./Pagination";
 import { Link } from "react-router-dom";
 import Loader from '../../Loader/Loader.jsx'
@@ -10,10 +10,10 @@ const TopRatedMovies = () => {
   const [loading, setLoading] = useState(false); // State for loading indicator
   const moviesPerPage = 12;
   const apiKey = "81a74c01";
-  const fetchMovies = async () => {
+  const fetchMovies = useCallback(async () => {
     setLoading(true);
     const movieList = [];
-    const keywords = ["horror", "game", "suspense", "movie", "comedy", "thriller"];
+    const keywords = ["game", "suspense", "movie", "comedy", "thriller"];
     const totalResults = 100;
 
     try {
@@ -35,7 +35,7 @@ const TopRatedMovies = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [])
 
   useEffect(() => {
     fetchMovies();
@@ -56,7 +56,7 @@ const TopRatedMovies = () => {
 
         {loading ? (
           <div className="text-white text-center">
-            <Loader/>
+            <Loader />
           </div>
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
