@@ -1,4 +1,5 @@
-const {nextui} = require('@nextui-org/theme');
+import { nextui } from '@nextui-org/theme';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -8,15 +9,15 @@ export default {
   ],
   theme: {
     extend: {
-      height:{
-        header:"560px",
-        rate:"400px",
+      height: {
+        header: "560px",
+        rate: "400px",
       },
-      fontSize:{
-        h1:"2.6rem",
+      fontSize: {
+        h1: "2.6rem",
       },
-      screens:{
-        xs:"475px",
+      screens: {
+        xs: "475px",
       },
       colors: {
         primary: "#3498db",
@@ -29,12 +30,12 @@ export default {
         text: "#C0C0C0",
         border: "#4b5563",
         dryGray: "#E0D505",
-        charcoal : "#34495e",
+        charcoal: "#34495e",
         NavBG: "#0B123F",
-        midNightGreen:"#004953",
-        bluishWhite:"#7D78C7",
+        midNightGreen: "#004953",
+        bluishWhite: "#7D78C7",
       },
     },
   },
   plugins: [nextui()],
-}
+};
