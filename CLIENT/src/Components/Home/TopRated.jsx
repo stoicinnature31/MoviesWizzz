@@ -10,6 +10,7 @@ const TopRatedMovies = () => {
   const [loading, setLoading] = useState(false); // State for loading indicator
   const moviesPerPage = 12;
   const apiKey = "81a74c01";
+
   const fetchMovies = useCallback(async () => {
     setLoading(true);
     const movieList = [];
@@ -19,7 +20,7 @@ const TopRatedMovies = () => {
     try {
       for (const keyword of keywords) {
         for (let page = 1; page <= Math.ceil(totalResults / 10); page++) {
-          const url = `http://www.omdbapi.com/?s=${keyword}&page=${page}&apikey=${apiKey}`;
+          const url = `https://www.omdbapi.com/?s=${keyword}&page=${page}&apikey=${apiKey}`;
           const response = await fetch(url);
           const data = await response.json();
 

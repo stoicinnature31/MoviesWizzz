@@ -1,4 +1,4 @@
-const url = 'http://www.omdbapi.com/?i=tt3896198&apikey=81a74c01';
+const url = 'https://www.omdbapi.com/?i=tt3896198&apikey=81a74c01';
 const options = {
     method: 'GET'
 };
